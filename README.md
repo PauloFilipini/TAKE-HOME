@@ -12,22 +12,70 @@ Este repositório utiliza um **monorepo**, separando claramente frontend e backe
 
 ```
 TAKEHOME/
-├── take-home-core/        # Backend (Node.js + Express)
-│   ├── src/
-│   ├── Dockerfile
-│   ├── .env.example
-│   └── package.json
 │
-├── take-home-app/         # Frontend (React + Vite + MUI)
+├── take-home-app/        # Frontend (React + Vite + MUI)
+│   ├── public/
 │   ├── src/
+│   │   ├── assets/
+│   │   ├── pages/
+│   │   ├── Chat/
+│   │   ├── api/
+│   │   ├── services/
+│   │   ├── theme/
+│   │   ├── types/
+│   │   │   └── chatTypes.ts
+│   │   ├── routes.tsx
+│   │   ├── App.tsx
+│   │   └── main.tsx
+│   ├── .env
 │   ├── Dockerfile
-│   ├── .env.example
-│   └── package.json
+│   └── README.md
+│
+├── take-home-core/       # Backend (Node.js + Express)
+│   ├── src/
+│   │   ├── api/
+│   │   │   ├── routes/
+│   │   │   └── conversation.controller.ts
+│   │   ├── application/
+│   │   │   ├── interfaces/
+│   │   │   └── conversation.usecase.ts
+│   │   ├── domain/
+│   │   │   └── escalation/
+│   │   │       └── EscalationPolicy.ts
+│   │   ├── infrastructure/
+│   │   │   ├── openai/
+│   │   │   └── vector-db/
+│   │   ├── prompts/
+│   │   │   └── rag.prompt.ts
+│   │   ├── app.ts
+│   │   ├── server.ts
+│   │   └── index.ts
+│   ├── .env
+│   ├── Dockerfile
+│   └── README.md
 │
 ├── docker-compose.yml
-├── .gitignore
 └── README.md
+
 ```
+## 🚀 Tecnologias Utilizadas
+
+  **Frontend**
+  * **React**
+  * **Vite**
+  * **TypeScript**
+  * **Material UI (MUI)**
+  * **Axios**
+  * **Docker**
+
+**Backend**
+  * **Node.js**
+  * **Express**
+  * **TypeScript**
+  * **Arquitetura em camadas (Domain / Application / Infrastructure)**
+  * **Integração preparada para IA (OpenAI / RAG)**
+
+**Docker**
 
 ### 🎯 Principais decisões técnicas
 
