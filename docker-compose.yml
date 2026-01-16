@@ -1,0 +1,22 @@
+services:
+  backend:
+    container_name: takehome-backend
+    build:
+      context: ./take-home-core
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./take-home-core/.env
+
+  frontend:
+    container_name: takehome-frontend
+    build:
+      context: ./take-home-app
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    env_file:
+      - ./take-home-app/.env
+    depends_on:
+      - backend
